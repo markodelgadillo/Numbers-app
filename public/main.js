@@ -1,15 +1,18 @@
 function renderFact(fact) {
   console.log(fact) // checking for the parameter being passed
   const $fact = document.querySelector('#result')
-  const factContent = document.querySelector('#content')
-  factContent.textContent = fact
+  const $factContent = document.querySelector('#content')
+
+  $factContent.textContent = fact
 
   return $fact
 }
 
-const $button = document.querySelector('button')
+const $button = document.querySelector('#button')
 
 $button.addEventListener('click', function(event) {
+  const card = document.querySelector('#card')
+  card.setAttribute('class', 'card bg-primary text-white p-4 h4')
   console.log('Checking button click') // testing for click event
   const numberInput = document.querySelector('#number')
   console.log(numberInput.value) // testing the value input
