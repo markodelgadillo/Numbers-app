@@ -8,18 +8,30 @@
   </head>
   <body>
     <div class="container">
-      <div class="row">
-        <div clas="col">
-      <form id="number" class="">
-        <input type="number" id="numberInput" size="100" placeholder="Give me a number!" required/>
-        <button id="button" type="button">Get Random Fact!</button>
-      </form>
-      <div id="result" class="">
-        <span id="fact" class=""></span>
+      <div class="row m-3" id="search">
+        <div class="col-lg-8 offset-lg-2">
+          <div class="card">
+            <div class="card-block">
+              <div class="input-group">
+                <form>
+                  <label class="col-form-label">Number Fact Generator
+                    <input id="number" type="number" name="number"  placeholder="Give me a number!" required/>
+                  </label>
+                  <span class="input-group-btn">
+                  <button type="button" name="button" class="btn btn-secondary">Random Fact!</button>
+                </span>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row m-3" id="response">
+        <div class="col-lg-6 offset-lg-3">
+        <span id="content"></span>
+      </div>
       </div>
     </div>
-    </div>
-    </div>
-    <script src="main.js"></script>
+    <script type="text/javascript" src="main.js"></script>
   </body>
 </html>

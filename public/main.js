@@ -1,27 +1,22 @@
-// rendering the dom elements
-function renderFact(randomFact) {
-  const fact = document.querySelector('#result')
-  const factContent = document.createElement('span')
-  factContent.textContent = randomFact
+function renderFact(fact) {
+  console.log(fact) // checking for the parameter being passed
+  const $fact = document.querySelector('#result')
+  const factContent = document.querySelector('#content')
+  factContent.textContent = fact
 
-  fact.appendChild(factContent)
-
-  return fact
+  return $fact
 }
 
-const getFact = function() {}
-
-const showFact = function() {}
-
-const $button = document.querySelector('#button')
-const $fact = document.querySelector('#result')
-const $factContent = document.querySelector('#fact')
+const $button = document.querySelector('button')
 
 $button.addEventListener('click', function(event) {
-  console.log('Checking button click')
+  console.log('Checking button click') // testing for click event
+  const numberInput = document.querySelector('#number')
+  console.log(numberInput.value) // testing the value input
+  const number = numberInput.value // captures the value of the input field
+  fetch('/number/' + number) //fetching with the /number path and adding the value of the requested number
+    .then(res => res.json()) //gets a promise back in json
+    .then(res => renderFact(res.text)) //passes the json as text to the renderFact function
+
   event.preventDefault()
-  const numberInput = document.querySelector('#numberInput')
-  console.log(numberInput.value)
-  const number = numberInput.value
-  fetch('/numbers/' + number).then(res => res.json())
 })
